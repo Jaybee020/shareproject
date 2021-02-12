@@ -1,0 +1,209 @@
+#design-brand{
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+    color:black;
+    margin-left: 20px;
+}
+
+
+header{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("pexels-olia-danilevich-4974915.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.navbar{
+    margin-top: 0px;
+    font-family: "ProximaNova Regular","Helvetica Neue",Helvetica,Arial,sans-serif;;
+    font-size: 14px;
+}
+
+.navbar-nav{
+    margin-left: 8%;
+    margin-top: 7.8px;
+    
+}
+
+#links{
+    font-family: 'Rubik', 'Roboto', Arial, sans-serif;
+    font-size: 15.3px;
+    letter-spacing: 0.18px;
+    font-weight: bolder;
+    color:black;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+    margin-right: 25%;
+    letter-spacing: normal;
+    
+}
+
+#links:hover{
+    color: #0b3cc2;
+    transition: color 0.5s ease;
+}
+#links:after {
+    content: '';
+    display: block;
+    border-bottom: 2.3px solid #2959D3;
+    width: 0;
+    -webkit-transition: 0.8s ease;
+            transition: 0.8s ease;
+}
+#links:hover:after { width: 100%; }
+
+
+#login-links{
+    margin-left: 51%; 
+    margin-right: 20%;
+    font-family: 'Rubik', 'Roboto', Arial, sans-serif;
+    font-size: 15.3px;
+    letter-spacing: 0.18px;
+    font-weight: bolder;
+    color:black;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-in-out;
+    margin-right: 25%;
+    letter-spacing: normal;
+    margin-bottom: 18px;
+}
+
+@media(max-width:1000px){
+    #login-links{
+        margin-left: 0px;
+    }
+}
+
+
+#login-links:hover{
+    color: #0b3cc2;
+    transition: color 0.5s ease;
+}
+#login-links:after {
+    content: '';
+    display: block;
+    border-bottom: 2.3px solid #2959D3;
+    width: 0;
+    -webkit-transition: 0.8s ease;
+            transition: 0.8s ease;
+}
+#login-links:hover:after { width: 100%; }
+
+.design{
+    width: 40%;
+    font-size: 60px;
+    color: rgb(18, 18, 18);
+    font-family: 'Rubik', 'Roboto', Arial, sans-serif;
+    margin-top: 6%;
+    margin-left: 4.64%;
+    border: 0 0 9px 0;
+    padding: 10px;
+    border-width: 30px;
+    border-color: #F75697;
+}
+.subtitle{
+    width: 40%;
+    margin-left: 4.84%;
+    color: rgb#7a0909;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width:866px){
+    .design{
+        width: 40%;
+        font-size: 60px;
+        color: rgb(18, 18, 18);
+        font-family: 'Rubik', 'Roboto', Arial, sans-serif;
+        margin-top: 4%;
+        margin-left: 2.64%;
+        border: 0 0 9px 0;
+        padding: 10px;
+        border-width: 30px;
+        border-color: #F75697;
+    }
+    .subtitle{
+        width: 40%;
+        margin-left: 2.84%;
+        color: rgb#8f0909;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    
+}
+
+#click{
+    background-color: #F54DA1;
+    color: #FDDBEC;
+    font-size: 13.33px;
+    width: 200px;
+    height: 50px;
+    margin-left: 4.84%;
+    font-family: 'Rubik', 'Roboto', Arial, sans-serif;
+    margin-top: 20px;
+    border-radius: 5px;
+    border-color:#F54DA1 ;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    transition: all .4s ease-in-out; 
+
+}
+#click:hover{
+    
+    transform: scale(1.15); 
+}
+
+main{
+    background-color: #F9F9FC;
+    
+}
+
+.why-us{
+    margin: auto;
+    align-content: center;
+    width: 60%;
+    margin-top: 30px;
+}
+
+.why-us h1{
+    width: 60%;
+    margin: auto;
+    align-content: center;
+    font-size: 35px;
+    color: #121212;
+    font-family: 'Sansita Swashed', cursive;
+}
+.why-us p{
+    padding: 15px 25px 5px 25px;
+    text-align: center;
+    color: #778292;
+    font-family: sans-serif;
+    font-weight: 520;
+    font-size: 17.12px;
+    letter-spacing: 00.164px;
+}
+
+.why-us-img{
+    width:80%;
+    align-self: center;
+    align-content: center;
+    margin: 7px 11%;
+}
+
+.three{
+    width: 20%;
+    float: left;
+    
+}
+
+.three img{
+    width: 30%;
+    
+}

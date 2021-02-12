@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Share Project| Share your ideas and collaborate with like minds</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100;1,300&family=Sansita+Swashed:wght@800&family=Slabo+27px&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style3.css">
+    </head>
+    <body>
+        <header>
+            <nav style="background-color: #DAE0E6;"  class="navbar navbar-expand-lg navbar-light ">
+                <img style="margin-top: -10px; margin-right: 10px; padding: 0;" src="/img/pngtree-planet-earth-vector-icon-png-image_3728954-removebg-preview.png"  height="40px"><input placeholder="Search" class="search form-control" type="text">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a href="discover" id="links" class="nav-link " href="#">Discover <span class="sr-only">(current)</span></a>
+                    <a id="links" class="nav-link" href="#">Resources</a>
+                    <a id="links" class="nav-link" href="#">Questions</a>
+                    <a href="/profile/<%= user.username %>" id="login-links"  class="navbar-brand" href="#"><img  src="/<%= user.img_path %>" class="profile-img"  style="margin-right: 6px; margin-top: 0px;" height="40px"><%= user.username %></a>
+                    <a href="/new-post" style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/blog.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/message.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/notification-bell-outline-interface-symbol.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="/logout">Logout</a>
+
+
+                   
+                  </div>
+                </div>
+            </nav>
+        </header>
+
+        <main style="background-color: white; margin-top: 20px;">
+            <form action="/profile-update" method="POST" enctype="multipart/form-data">
+            <div class="about-user">
+                <div class="row">
+                    
+                    <div class="user-profile col-md-3">
+                        <img  src="/<%= profile.img_path %>" alt="Profile pic" onerror="this.onerror=null;this.src='/img/download.png'"  class="profile-img-user">
+                        <div class="update-pic">
+                            <label style="border: 1px solid rgba(0, 0, 0, 0.326); padding: 4px; border-radius: 4px; cursor: pointer;" for="for-pic"><img src="/img/draw.png" width="25px"></label>
+                            <input name="profile" type="file" accept="image/*" id="for-pic" hidden >
+                        </div>
+                        
+                    </div>
+                        
+                    <div id="user-profile"  class="col-md-9">
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li class="profile-nav" >
+                                <a  href="profile" id="profile-links" href="">Overview</a>
+                            </li>
+                            <li class="profile-nav" >
+                                <a  href="/projects" id="profile-links" href="">Projects</a>
+                            </li>
+                            <li  class="profile-save">
+                                <button style="height: 30px; width: 60px; padding: 0 10px;"  type="submit" class="btn btn-primary">Save</button>
+                            </li>
+                            
+                        </ul>
+                        
+                       
+                        <hr style="width: 100%; margin-top: 10px;">
+
+
+                        <div class="form-group">
+                            <label for="update-username">Username</label>
+                            <input value="<%=user.username %>" name="username" style="width: 400px; height: 48px;"  name="username"  type="text" class="form-control"  id="update-username">
+                        </div>
+
+                      
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input value="<%=user.email %>" name="email"  style="height: 48px;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label for="exampleInputEmail1">Topics</label>
+                                <input value="<%=user.email %>" name="topics" x style="height: 48px;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div style="font-size: 13px;" id="emailHelp" class="form-text">Multiple topics should be separated by a ","</div>
+                              </div>
+                              <div class="col-sm-6 form-group">
+                                <label for="exampleInputEmail1">Location</label>
+                                <input value="<%=user.email %>" name="location"  style="height: 48px;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              </div>
+                        </div>
+
+                         
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">About</label>
+                            <textarea  name="about"  class="form-control" id="exampleFormControlTextarea1" rows="3"> <%= profile.about%> </textarea>
+                          </div>
+
+                        
+
+                        <div class="popular">
+                            Favorite Project
+                            <div class="popular-projects">
+                                <ul style="padding-left: 0; list-style: none; padding-top: 20px;" >
+                                    <li class="list-of-fav">
+                                        <a>
+                                        <h4 class="fav-title">Petshop</h4>
+                                        <p class="summary">This is an e-commerce application for Android built with Flutter(iOS) to come soon</p>
+                                        <div style="padding-left: 0; margin-left: 0; font-size: 11px;" class="comments">
+                                            <img style="height: 20px;" src="/img/comments-64.png"><span class="count">141 comments</span><span><img style="height: 20px;" src="/img/thumbs-up.png"></span><span class="count">25 likes</span><span><img style="height: 20px;" src="/img/thumbs-up.png"></span>
+                                        </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-of-fav">
+                                        <a>
+                                            <h4 class="fav-title">Petshop</h4>
+                                            <p class="summary">This is an e-commerce application for Android built with Flutter(iOS) to come soon</p>
+                                            <div style="padding-left: 0; margin-left: 0; font-size: 11px;" class="comments">
+                                                <img style="height: 20px;" src="/img/comments-64.png"><span class="count">141 comments</span><span><img style="height: 20px;" src="/img/thumbs-up.png"></span><span class="count">25 likes</span><span><img style="height: 20px;" src="/img/thumbs-up.png"></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-of-fav">
+                                        <a>
+                                            <h4 class="fav-title">Petshop</h4>
+                                            <p class="summary">This is an e-commerce application for Android built with Flutter(iOS) to come soon</p>
+                                            <div style="padding-left: 0; margin-left: 0; font-size: 11px;" class="comments">
+                                                <img style="height: 20px;" src="/img/comments-64.png"><span class="count">141 comments</span><span><img style="height: 20px;" src="/img/thumbs-up.png"></span><span class="count">25 likes</span><span><img style="height: 20px;" src="/img/thumbs-up.png"></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-of-fav">
+                                        <a href="#">
+                                            <h4 class="fav-title">Petshop</h4>
+                                            <p class="summary">This is an e-commerce application for Android built with Flutter(iOS) to come soon</p>
+                                            <div style="padding-left: 0; margin-left: 0; font-size: 11px;" class="comments">
+                                                <img style="height: 20px;" src="/img/comments-64.png"><span class="count">141 comments</span><span><img style="height: 20px;" src="/img/thumbs-up.png"></span><span class="count">25 likes</span><span><img style="height: 20px;" src="/img/thumbs-up.png"></span>
+                                            </div>
+                                            </a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+    
+                    </div>
+
+                    
+                </div>
+                
+        </div>
+        
+    </form>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+
+</html>

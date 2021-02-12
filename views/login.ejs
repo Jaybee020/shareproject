@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Share Project| LogIn</title>
+        <link rel="stylesheet" href="/css/style1.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body id="background">
+        <main >
+            
+                
+
+            <img class="logo" src="/img/pngtree-planet-earth-vector-icon-png-image_3728954-removebg-preview.png"  height="40px">
+            <div class="log-in">
+                <form action="/login" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <% if(messages.error){ %>
+                        <p class="error"><%=messages.error%></p>
+                        <% } %>
+                        <% if(messages.created){ %>
+                            <p class="success"><%=messages.created%></p>
+                            <% } %>
+                    <div style="margin-bottom: 14px;" class="form-group">
+                        <label style="margin-bottom: 4px;" for="exampleInputEmail1">Username</label>
+                        <input  required name="username" required id="form-controls" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        
+                      </div>
+                   
+                      <div style="margin-bottom: 14px;" class="form-group">
+                        <label style="margin-bottom: 4px;" for="exampleInputPassword1">Password</label>
+                        <input required name="password" required id="form-controls" type="password" class="form-control" id="exampleInputPassword1">
+                      </div>
+
+                    <div style="margin-bottom: 10px;" class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                    </div>
+                    <a class="forgot" ><small style="cursor: pointer;">Forgot your password?</small> </a>
+                    <button type="submit" class="btn btn-secondary">LOGIN</button>
+                
+                </form>
+
+            </div>
+            <a href="register" class="new-account"><small style="font-size: 12px; cursor: pointer;">Create new account</small></a>
+
+        </main>
+
+    </body>
+</html>

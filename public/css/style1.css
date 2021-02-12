@@ -1,0 +1,110 @@
+#background{
+
+    background-color: #F7F5F7;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+}
+
+.logo{
+    position: absolute;
+    top:29%;
+    left: 48.6829832%;
+}
+
+.log-in{
+    background-color: #FFFEFF;
+    margin: auto;
+    margin-top: 220px;
+    width: 36%;
+    height: 275px;
+    
+}
+
+
+
+
+form{
+    padding-top: 5%;
+    width: 95%;
+    height: 90%;
+    margin: auto;
+}
+
+.forgot{
+    text-decoration: underline;
+     margin-right: 20px;
+      margin-left: 47%;
+      color: black;
+}
+
+button{
+    width: 100px;
+}
+
+@media(max-width:900px){
+    .log-in{
+        background-color: #FFFEFF;
+        margin: auto;
+        margin-top: 220px;
+        width: 290px;
+        height: 255px;
+        
+    }
+    
+    
+    form{
+        padding-top: 5%;
+        width: 95%;
+        height: 90%;
+        margin: auto;
+    }
+    
+    .forgot{
+        text-decoration: underline;
+         margin-right: 20px;
+          margin-left: 47%;
+          color: black;
+    }
+
+    
+
+}
+.new-account{   
+   position: absolute;
+    bottom: 15%;
+    left: 46%;
+    color:  #778292;
+    cursor: pointer;
+}
+
+.error{
+    font-size: 13px;
+    color: red;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    width: 350px;
+    margin-bottom: 0px;
+    padding:0 0 0  0px;
+    border-radius: 4px;
+    
+}
+
+.success{
+    font-size: 13px;
+    color: green;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    width: 350px;
+    margin-bottom: 0px;
+    padding:0 0 0  0px;
+    border-radius: 4px;
+    
+}
+
+
+
+
+

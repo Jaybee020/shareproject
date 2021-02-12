@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Share Project| LogIn</title>
+        <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body id="background">
+        <main >
+
+            <img class="logo" src="img/pngtree-planet-earth-vector-icon-png-image_3728954-removebg-preview.png"  height="40px">
+            <div class="log-in">
+                <form action="/register" method="POST">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <% if(messages.error){ %>
+                    <p class="error"><%=messages.error%></p>
+                    <% } %>
+                    <div style="margin-bottom: 14px;" class="form-group">
+                        <label style="margin-bottom: 4px;" for="exampleInputEmail1">Username</label>
+                        <input name="username" id="form-controls" required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        
+                      </div>
+
+                    <div style="margin-bottom: 14px;" class="form-group">
+                        <label style="margin-bottom: 4px;" for="exampleInputEmail1">Email</label>
+                        <input name="email" id="form-controls" required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        
+                      </div>
+                   
+                      <div style="margin-bottom: 1px;"  class="form-group">
+                        <label style="margin-bottom: 4px;" for="exampleInputPassword1">Password</label>
+                        <input name="password" id="form-controls" required type="password" class="form-control" id="exampleInputPassword1">
+                      </div>
+                      <small style="margin-bottom: 8.7px;"  id="emailHelp" class="form-text text-muted">The password should have  numeric and special characters</small>
+                      <div style="margin-bottom: 14px;" class="form-group">
+                        <label style="margin-bottom: 4px;" for="exampleInputPassword1">Confirm Password</label>
+                        <input name="confirm_password" id="form-controls" required type="password" class="form-control" id="exampleInputPassword1">
+                      </div>
+
+                    
+                   
+                    <button style=" margin-left: 77%; width: 22%; font-size: 90%;" type="submit" class="btn btn-secondary">REGISTER</button>
+                
+                </form>
+
+            </div>
+            <a href="login" class="new-account"><small style="font-size: 12px; cursor: pointer;">Already have an account?Log In</small></a>
+
+        </main>
+
+    </body>
+</html>

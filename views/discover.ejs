@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Share Project| Share your ideas and collaborate with like minds</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100;1,300&family=Sansita+Swashed:wght@800&family=Slabo+27px&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style3.css">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <img style="margin-top: -10px; margin-right: 10px; padding: 0;" src="img/pngtree-planet-earth-vector-icon-png-image_3728954-removebg-preview.png"  height="40px"><input placeholder="Search" class="search form-control" type="text">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    
+                    <a id="links" class="nav-link " href="#">Discover <span class="sr-only">(current)</span></a>
+                    <a id="links" class="nav-link" href="#">Resources</a>
+                    <a id="links" class="nav-link" href="#">Questions</a>
+                    <a href="/profile/<%= user.username %>" id="login-links"  class="navbar-brand" href="#"><img  src="/<%= user.img_path %>" class="profile-img"  style="margin-right: 6px; margin-top: 0px;"  height="40px"><%= user.username %></a>
+                    <a href="/new-post" style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/blog.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/message.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/notification-bell-outline-interface-symbol.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="logout">Logout</a>
+                  </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="article">
+                <div class="user-part">
+                    <img class="profile-img" src="img/ato-aikins-283964-unsplash (2).jpg" > <span class="username">Yusuf . </span><span class="time">14.8/03/2020 17:59</span>
+                    <h4 class="title">THE MYSTERIOUS WHITE-HOLE</h4>
+                    <hr>
+                    <div class="body">
+                        The white hole is said to be the hypothetical opposite of the black hole. blah blah blah blah blah blah.Lorem ipsum dolor sit amet, <span>  adipiscing elit</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, <span>  adipiscing elit</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, <span>  adipiscing elit</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, <span>  adipiscing elit</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, <span>  adipiscing elit</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+                    <div class="comments">
+                        <img style="height: 24px;" src="img/comments-64.png"><span class="count">141 comments</span><span><img style="height: 24px;" src="img/thumbs-up.png"></span><span class="count">25 likes</span><span><img style="height: 24px;" src="img/thumbs-up.png"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="article">
+                <div class="user-part">
+                    <img class="profile-img" src="img/ato-aikins-283964-unsplash (2).jpg" > <span class="username">Yusuf . </span><span class="time">14.8/03/2020 17:59</span>
+                    <h4 class="title">THE MYSTERIOUS WHITE-HOLE</h4>
+                    <hr>
+                    <div class="body">
+                        The white hole is said to be the hypothetical opposite of the black hole. blah blah blah blah blah blah.Lorem ipsum dolor sit amet, <span>  adipiscing elit</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Ldipiscing elit</span>,st laborum.
+                    </div>
+                    <div class="comments">
+                        <img style="height: 24px;" src="img/comments-64.png"><span class="count">141 comments</span><span><img style="height: 24px;" src="img/thumbs-up.png"></span><span class="count">25 likes</span><span><img style="height: 24px;" src="img/thumbs-up.png"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="article img-article">
+                <div class="user-part">
+                    <img class="profile-img" src="img/ato-aikins-283964-unsplash (2).jpg" > <span class="username">Yusuf . </span><span class="time">14.8/03/2020 17:59</span>
+                    <h4 class="title">THE MYSTERIOUS WHITE-HOLE</h4>
+                    <hr>
+                    <div class="body">
+                        Hello this is an example of a black hole
+                    </div>
+                    <div class="img-portion">
+                        <img class="img-thumbnail"  src="img/joanna-kosinska-bF2vsubyHcQ-unsplash.jpg" style="width:96%;margin: 7px 2%;"> 
+                    </div>
+                    <div class="comments">
+                        <img style="height: 24px;" src="img/comments-64.png"><span class="count">141 comments</span><span><img style="height: 24px;" src="img/thumbs-up.png"></span><span class="count">25 likes</span><span><img style="height: 24px;" src="img/thumbs-up.png"></span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <aside class="aside">
+            <div style="background-color: white; border-radius: 6px;">
+                <h6 class="title rating-title" >Top Rated Users</h6>
+                <ol class="rating" style="list-style: none;">
+                <li class="rated-users" >
+                    <a style="cursor: pointer;">
+                        <img class="profile-img" src="img/ato-aikins-283964-unsplash (2).jpg" > <span class="username">Yusuf . </span> <span> <button style="background-color: #0079D3; margin-left: 80px; height: 35px; text-align: center; padding-top: 4px; width: 90px; font-size: 14.8px; border-radius: 4px; font-weight: 500px;"  type="button" class="btn btn-secondary">Follow</button></span>
+                    </a>
+                </li>
+                
+                <li class="rated-users" >
+                    <a  style="cursor: pointer;">
+                        <img class="profile-img" src="img/ato-aikins-283964-unsplash (2).jpg" > <span class="username">Yusuf . </span> <span> <button style="background-color: #0079D3; margin-left: 80px; height: 35px; text-align: center; padding-top: 4px; width: 90px; font-size: 14.8px; border-radius: 4px; font-weight: 500px;"  type="button" class="btn btn-secondary">Follow</button></span>
+                    </a>
+                </li>
+                
+                <li class="rated-users" >
+                    <a style="cursor: pointer;">
+                        <img class="profile-img" src="img/ato-aikins-283964-unsplash (2).jpg" > <span class="username">Yusuf . </span> <span> <button style="background-color: #0079D3; margin-left: 80px; height: 35px; text-align: center; padding-top: 4px; width: 90px; font-size: 14.8px; border-radius: 4px; font-weight: 500px;"  type="button" class="btn btn-secondary">Follow</button></span>
+                    </a>
+                </li>
+                
+                <li class="rated-users" >
+                    <a style="cursor: pointer;">
+                        <img class="profile-img" src="img/ato-aikins-283964-unsplash (2).jpg" > <span class="username">Yusuf . </span> <span> <button style="background-color: #0079D3; margin-left: 80px; height: 35px; text-align: center; padding-top: 4px; width: 90px; font-size: 14.8px; border-radius: 4px; font-weight: 500px;"  type="button" class="btn btn-secondary">Follow</button></span>
+                    </a>
+                </li>
+                
+            </ol>
+            </div>
+
+            <div class="ad">
+                <H1>AD IS HERE</H1>
+            </div>
+            
+        </aside>
+        <footer>
+
+        </footer>
+    </body>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</html>

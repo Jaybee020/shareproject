@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Share Project| Share your ideas and collaborate with like minds</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100;1,300&family=Sansita+Swashed:wght@800&family=Slabo+27px&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style3.css">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav style="background-color: #DAE0E6;" class="navbar navbar-expand-lg navbar-light ">
+                <img style="margin-top: -10px; margin-right: 10px; padding: 0;" src="/img/pngtree-planet-earth-vector-icon-png-image_3728954-removebg-preview.png"  height="40px"><input placeholder="Search" class="search form-control" type="text">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    
+                    <a id="links" class="nav-link " href="#">Discover <span class="sr-only">(current)</span></a>
+                    <a id="links" class="nav-link" href="#">Resources</a>
+                    <a id="links" class="nav-link" href="#">Questions</a>
+                    <a href="/profile/<%= user.username %>" id="login-links"  class="navbar-brand" href="#"><img src="/<%= user.img_path %>"  class="profile-img"  style="margin-right: 6px; margin-top: 0px;"  height="40px"><%= user.username %></a>
+                    <a href="/new-post" style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/blog.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/message.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/notification-bell-outline-interface-symbol.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="logout">Logout</a>
+                  </div>
+                </div>
+            </nav>
+        </header>
+        <main style="background-color: white; max-height: 100%; padding: 0; min-height: 0;">
+            <div style="max-height: 100%; width: 100%; margin: 0; padding: 10px 0px; ;" class="row">
+                <div style="overflow-y: scroll; padding-right: 8px;"class="left-side col-md-3">
+                    <div style="display: inline-flex;">
+                        <img  style="width: 50px; height: 50px; border-radius: 25px;" src="/<%= user.img_path %>"alt="Profile pic" onerror="this.onerror=null;this.src='/img/download.png'" >
+                        <h3 style="color: #0b3cc2d0; margin-left: 15px; font-family: sans-serif;" ><%= user.username %></h3>
+                        <a style="margin-left: 70%; margin-top: 14px;" href="/profile-update" id="profile-links"><img src="/img/draw.png" height="18px"></a> 
+                    </div>
+
+                    <div  style="margin-top: 38px;">
+                        <input style="width: 90%;" placeholder="Search Friends" class="search form-control" type="text">
+                    </div>
+
+                    <ul style="list-style: none; padding-left: 0; margin-top: 28px; ">
+                        <% if(convos.length==0){ %>
+
+                        <% }else{ %>
+                            <% convos.forEach((elements)=>{ %>
+                                <% if(elements.last_contact) { %>
+                                    <% if(`${user._id}` == `${elements.initiator._id}`){ %>
+                                        <li class="chat-list"  >
+                                            <a style="text-decoration: none;" href="/chat/<%= elements.recipient.username %>">
+                                                <div style="display: inline-flex; width: 100%;">
+                                                    <img  style="width: 50px; height: 50px; border-radius: 25px;"  src="/<%= elements.recipient.img_path %>"alt="Profile pic" onerror="this.onerror=null;this.src='/img/download.png'" >
+                                                    
+                                                    <div style="overflow-y: hidden; text-overflow: ellipsis; width: 100%;">
+                                                        <span class="chat-username" style="color: #0b3cc2d0; margin-left: 15px; font-family: sans-serif;" ><%= elements.recipient.username %> </span>
+                                                        <span class="chat-time"><%= elements.last_contact.getDate() %>/<%= elements.last_contact.getMonth() +1 %>/<%= elements.last_contact.getFullYear() %> <%= elements.last_contact.getHours() %>:<%= elements.last_contact.getMinutes() %></span>
+                                                        <p class="chat-text">
+                                                            <%= elements.last_message %>
+                                                        </p>
+                                                    
+                                                    </div>
+                                                    
+                                                </div>   
+                                            </a>
+                                              
+                                        </li>
+                                    <% }else{ %>
+                                        <li class="chat-list"  >
+                                            <a style="text-decoration: none;" href="/chat/<%= elements.initiator.username %>">
+                                                <div style="display: inline-flex; width: 100%;">
+                                                    <img  style="width: 50px; height: 50px; border-radius: 25px;"  src="/<%= elements.initiator.img_path %>" alt="Profile pic" onerror="this.onerror=null;this.src='/img/download.png'" >
+                                                    
+                                                    <div style="overflow-y: hidden; text-overflow: ellipsis; width: 100%;">
+                                                        <span class="chat-username" style="color: #0b3cc2d0; margin-left: 15px; font-family: sans-serif;" ><%= elements.initiator.username %></span>
+                                                        <span class="chat-time"> <%= elements.last_contact.getDate() %>/<%= elements.last_contact.getMonth() +1 %>/<%= elements.last_contact.getFullYear() %> <%= elements.last_contact.getHours() %>:<%= elements.last_contact.getMinutes() %></span>
+                                                        <p class="chat-text">
+                                                            <%= elements.last_message %>
+                                                        </p>
+                                                    
+                                                    </div>
+                                                    
+                                                </div> 
+                                            </a>
+                                        </li>
+                                    <% } %>
+                                <% } %>
+                            <% }) %>
+                        <% } %>
+                       
+                        
+                        
+                    </ul>
+                   
+                </div>
+    
+                <div class="middle-side col-md-9">
+                    <div class="chat-title">
+                        <a style="color: black;" href="/profile/<%= chat_user.username %>" id=""  class="navbar-brand" href="#"><img  style="width: 50px; height: 50px; border-radius: 25px; margin-left:  25px; margin-right: 13px;"  src="data:<%= chat_user.img_content_type %>;base64,<%=chat_user.image.toString('base64')%>" alt="Profile pic" style="margin-right: 6px;"  height="40px"> <span style="font-weight: 500; font-size: 24px;"><%= chat_user.username %></span></a>
+                    </div>
+                    <hr>
+                    <div id="chat-messages" class="chat-messages">
+                        <% if(messages.length==0){ %>
+                        <% }else {%>    
+                            <% messages.forEach((elements)=>{ %>
+                                <% if(`${user._id}` == `${elements.Sender}`){ %>
+                                    <div class="sent-message">
+                                        <img  style="width: 21px; height: 21px; border-radius: 10.5px; margin-left:  5px; margin-right: 13px; margin-bottom: 11px ;align-self: flex-end;"  src="data:<%= user.img_content_type %>;base64,<%=user.image.toString('base64')%>" alt="Profile pic" style="margin-right: 6px;"  height="40px">
+                                            <div style="text-align: right;">   
+                                                <div class="text-sent"><%= elements.text %> </div>
+                                                <small style=" color: #9395B3; font-size: 9px; margin-left: 0px; position: relative; bottom: 8px; " class="chat-time"><%= elements.date_created.getDate() %>/<%= elements.date_created.getMonth() +1 %>/<%= elements.date_created.getFullYear() %> <%= elements.date_created.getHours() %>:<%= elements.date_created.getMinutes() %> </small>
+                                            </div>
+                                    </div>
+                                    <% }else{ %>
+                                    <div class="received-message">
+                                        <img  style="width: 21px; height: 21px; border-radius: 10.5px; margin-left:  11px; margin-right: 13px; align-self: flex-end; margin-bottom: 11px ;"  src="data:<%= chat_user.img_content_type %>;base64,<%=chat_user.image.toString('base64')%>" alt="Profile pic" style="margin-right: 6px;"  height="40px">
+                                        
+                                        <div  >   
+                                            <div class="text-received"><%= elements.text %> </div>
+                                            <small style=" color: #9395B3; font-size: 9px; margin-left: 0px; position: relative; bottom: 8px; " class="chat-time"><%= elements.date_created.getDate() %>/<%= elements.date_created.getMonth() +1 %>/<%= elements.date_created.getFullYear() %> <%= elements.date_created.getHours() %>:<%= elements.date_created.getMinutes() %> </small>
+                                        </div>
+                                        
+                                    </div>
+                                <% } %>
+                            <% }) %>
+                        <% } %>
+
+                    </div>
+                    <div class="chat-form">
+                            <form autocomplete="off"  id="form" action="/chat/<%= chat_user.username %>" method="post">
+                                <input id="form-input" class="input-text form-control" type="text" name="message" id=""><span><img style=" height: 24px; margin-right: 13px;" src="/img\paperclip.png"><button type="submit" class="btn btn-success">SEND</button></span>
+                            </form>
+                    </div>
+                </div>
+    
+                
+            </div>
+            
+        </main>
+        
+    </body>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+
+    <script>
+        var loc=window.location
+        const socket = io();
+        var form=$("#form")//gets the id "form" element
+        var msg_input=$("#form-input")//gets the form-input element
+        var chat_messages=$("#chat-messages")
+        var me="<%= user._id %>"
+        var other_user="<%= chat_user._id %>"
+        chat_messages.animate({scrollTop: chat_messages.prop("scrollHeight")},"slow")
+        socket.on("connect",(io)=>{
+            console.log("the socket is connected")
+           
+        })
+        socket.emit("join_message",{"me":me,other_user:other_user})
+        form.submit((event)=>{
+                event.preventDefault()
+                var msg_text=msg_input.val()
+                if(msg_text){
+                    var data={
+                        "message":msg_text,
+                        "me":me,
+                        "other_user":other_user
+                    }
+                    console.log(data)
+                    socket.emit("send_message",data)
+                    msg_input.val("")
+                }
+        
+        })  
+
+        socket.on("received_message",(data)=>{
+            let sender="sent"
+            let img='<img  style="width: 21px; height: 21px; border-radius: 10.5px; margin-left:  5px; margin-right: 13px; margin-bottom: 11px ;align-self: flex-end;"  src="data:<%= user.img_content_type %>;base64,<%=user.image.toString("base64")%>" alt="Profile pic" style="margin-right: 6px;"  height="40px">'
+            console.log(data)
+            let right="right"
+
+            if(me!==data.message_sender.toString()){
+                sender="received"
+                img='<img  style="width: 21px; height: 21px; border-radius: 10.5px; margin-left:  11px; margin-right: 13px; align-self: flex-end; margin-bottom: 11px ;"  src="data:<%= chat_user.img_content_type %>;base64,<%=chat_user.image.toString("base64")%>" alt="Profile pic" style="margin-right: 6px;"  height="40px">'
+                right-"left"
+            }
+            var objToday = new Date();
+			domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
+			dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
+			months = new Array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Octo', 'Nov', 'Dec'),
+			curMonth = months[objToday.getMonth()],
+			curYear = objToday.getFullYear(),
+			curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
+			curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
+			curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
+			curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+            var today = objToday.getDate() + "/" + (objToday.getMonth()+1) + "/" + curYear + "," + curHour + ":" + curMinute + " " + curMeridiem + "." ;
+            appendmessage(data.message,sender,img,today,right)
+            chat_messages.animate({scrollTop: chat_messages.prop("scrollHeight")},"slow")
+        })
+
+
+        function appendmessage(text,sender,img,time,right,attachment=undefined){
+                if (attachment){
+                    chat_messages.prepend(`
+                <div class="message-row ${sender}-message">
+                        <div class="message-content">
+                              ${img}      
+                            <figure><img   src="${attachment}" alt="attachment">
+                                <figcaption>${text}</figcaption>
+                                </figure>
+                                <div class="message-time">${time}</div>
+                        </div>
+                </div>
+                
+                `
+                
+                )
+
+                }
+                else{
+                    chat_messages.append(`
+                    <div class="${sender}-message">
+                        ${img}
+                            <div style="text-align: ${right};">   
+                                <div class="text-${sender}">${text}</div>
+                                <small style=" color: #9395B3; font-size: 9px; margin-left: 0px; position: relative; bottom: 8px; " class="chat-time">${time} </small>
+                            </div>
+                    </div>
+                
+                `)
+                }
+            }
+
+        
+    </script>
+
+    </html>

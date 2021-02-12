@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Share Project| Share your ideas and collaborate with like minds</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100;1,300&family=Sansita+Swashed:wght@800&family=Slabo+27px&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style3.css">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header style="background-color: #DAE0E6;">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <img style="margin-top: -10px; margin-right: 10px; padding: 0;" src="/img/pngtree-planet-earth-vector-icon-png-image_3728954-removebg-preview.png"  height="40px"><input placeholder="Search" class="search form-control" type="text">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a href="/discover" id="links" class="nav-link " href="#">Discover <span class="sr-only">(current)</span></a>
+                    <a id="links" class="nav-link" href="#">Resources</a>
+                    <a id="links" class="nav-link" href="#">Questions</a>
+                    <a href="/profile/<%= user.username %>" id="login-links"  class="navbar-brand" href="#"><img src="/<%= user.img_path %>"  class="profile-img"  style="margin-right: 6px; margin-top: 0px;" height="40px"><%= user.username %></a>
+                    <a href="/new-post" style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/blog.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/message.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="#"><img height="24px" src="/img/notification-bell-outline-interface-symbol.png"></a>
+                    <a style="color: #0b3cc2;" id="links" class="nav-link" href="/logout">Logout</a>
+
+
+                   
+                  </div>
+                </div>
+            </nav>
+        </header>
+    <form autocomplete="off" action="/post-update/<%= post._id %>" method="post">
+        <main style="background-color: white;">
+            
+                <div class="post" >
+                    <input value="<%= post.title %>" required type="text" name="title" class="post-title" placeholder="Post Title">
+                    <hr style="margin-top: 0;">
+                    <textarea style="min-height: 400px;" required  class="body form-control" id="content" name="content"><%= post.content %></textarea>
+                    <label style="border: 1px solid rgba(0, 0, 0, 0.326); padding: 4px; border-radius: 4px; cursor: pointer;" for="for-pic"><img src="/img/draw.png" width="25px"></label>
+                    <input name="profile" type="file" accept="image/*" id="for-pic" hidden >
+                    <button style="height: 40px; width: 70px; padding: 5 15px; margin: 20px 2px 0px 90%;"  type="submit" class="btn btn-primary">Update</button>
+            </div>
+        
+           
+            
+
+            
+
+
+        </main>
+
+        <aside>
+            <div >
+                <h6 class="title rating-title" >Topics</h6>
+                <ol class="rating" style="list-style: none;">
+                    <li class="rated-users" >
+                        <input value="<%= post.topics.join() %>" required name="topics" class="form-control">
+                        <div style="font-size: 13px;" id="emailHelp" class="form-text">Multiple topics should be separated by a ","</div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="ad">
+                <H1>AD IS HERE</H1>
+            </div>
+            
+        </aside>
+
+    </form>
+        <footer>
+
+        </footer>
+    </body>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>
+
+  <!-- Initialize the editor. -->
+   <script>
+       
+    </script>
+</html>
